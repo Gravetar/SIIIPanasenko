@@ -1,0 +1,33 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+TABLE {
+    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+}
+
+TD, TH {
+    padding: 3px; /* Поля вокруг содержимого таблицы */
+    border: 1px solid black; /* Параметры рамки */
+    text-align:center
+}
+
+TH {
+    background: #b0e0e6; /* Цвет фона */
+    font-weight:bold
+}

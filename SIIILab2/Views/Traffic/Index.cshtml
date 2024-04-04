@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Traffic>
+
+<h2>Список трафиков</h2>
+<table border="1">
+    <tr>
+        <th>Идентификатор трафика</th>
+        <th>Плотность трафика</th>
+        <th>Путь к файлу трафика</th>
+        <th>Действия:</th>
+    </tr>
+    @foreach (var c in Model)
+    {
+        <tr>
+            <td>@c.Id</td>
+            <td>@c.Density</td>
+            <td>@c.PathFile</td>
+            <td>
+                @Html.ActionLink("Смотреть", "GetTraffic", "Traffic", new { id = c.Id }) |
+                @Html.ActionLink("Изменить", "UpdateTraffic", "Traffic", new { id = c.Id }) |
+                @Html.ActionLink("Удалить", "DeleteTraffic", "Traffic", new { id = c.Id })
+            </td>
+        </tr>
+    }
+</table>
+<p> @Html.ActionLink("Добавить", "CreateTraffic", "Traffic")</p>

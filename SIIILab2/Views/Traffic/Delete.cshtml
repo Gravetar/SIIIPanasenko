@@ -1,0 +1,17 @@
+﻿@model Traffic
+
+<h3>Вы действительно хотите удалить данный трафик?</h3>
+<div>
+    <h3>Идентификатор:  @Html.DisplayFor(m => m.Id)</h3>
+    <p>Плотность трафика: @Html.DisplayFor(m => m.Density)</p>
+    <p>Путь к файлу трафика: @Html.DisplayFor(m => m.PathFile)</p>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <input type="submit" value="Удалить" />
+    }
+
+    @Html.ActionLink("Назад", "Index", "Traffic")
+</div>

@@ -1,0 +1,8 @@
+﻿@model Traffic
+<div>
+    <h3>Идентификатор:  @Html.DisplayFor(m => m.Id)</h3>
+    <p>Плотность трафика: @Html.DisplayFor(m => m.Density)</p>
+    <p>Путь к файлу трафика: @Html.DisplayFor(m => m.PathFile)</p>
+
+    @Html.ActionLink("Назад", "Index", "Traffic")
+</div>

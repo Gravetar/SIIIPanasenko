@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<RequestRoad>
+
+<h2>Список Запросов по дорогам</h2>
+<table border="1">
+    <tr>
+        <th>Заказчик</th>
+        <th>Дата запроса</th>
+        <th>Статус запроса</th>
+        <th>Файл результата</th>
+        <th>Идентификатор дороги</th>
+        <th>Действия</th>
+    </tr>
+    @foreach (var c in Model)
+    {
+        <tr>
+            <td>@c.Costumer</td>
+            <td>@c.Reques_date</td>
+            <td>@c.Status</td>
+            <td>@c.Result</td>
+            <td>@c.roadid</td>
+            <td>
+                @Html.ActionLink("Смотреть", "GetRequest", "RequestRoad", new { id = c.Id }) |
+                @Html.ActionLink("Изменить", "UpdateRequestRoad", "RequestRoad", new { id = c.Id }) |
+                @Html.ActionLink("Удалить", "DeleteRequestRoad", "RequestRoad", new { id = c.Id })
+            </td>
+        </tr>
+    }
+</table>
+<p> @Html.ActionLink("Добавить", "CreateRequestRoad", "RequestRoad")</p>

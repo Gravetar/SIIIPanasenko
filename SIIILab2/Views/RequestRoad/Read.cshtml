@@ -1,0 +1,11 @@
+﻿@model RequestRoad
+<div>
+    <h3>Идентификатор:  @Html.DisplayFor(m => m.Id)</h3>
+    <p>Заказчик: @Html.DisplayFor(m => m.Costumer)</p>
+    <p>Дата запроса: @Html.DisplayFor(m => m.Reques_date)</p>
+    <p>Статус: @Html.DisplayFor(m => m.Status)</p>
+    <p>Результат: @Html.DisplayFor(m => m.Result)</p>
+    <p>Идентификатор дороги: @Html.DisplayFor(m => m.roadid)</p>
+
+    @Html.ActionLink("Назад", "Index", "RequestRoad")
+</div>

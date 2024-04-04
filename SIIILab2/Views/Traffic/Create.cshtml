@@ -1,0 +1,20 @@
+﻿@model Traffic
+
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div>
+            Плотность трафика
+            <p>@Html.EditorFor(model => model.Density)</p>
+        </div>
+
+        <div>
+            Путь к файлу трафика
+            <p>@Html.EditorFor(model => model.PathFile)</p>
+        </div>
+
+        <p><input type="submit" value="Добавить" /></p>
+        @Html.ActionLink("Назад", "Index", "Traffic")
+    }
+</div>

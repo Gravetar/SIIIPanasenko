@@ -1,0 +1,22 @@
+﻿@model Road
+
+<h3>Вы действительно хотите удалить данную дорогу?</h3>
+<div>
+    <h3>Идентификатор:  @Html.DisplayFor(m => m.Id)</h3>
+    <p>Адрес дороги: @Html.DisplayFor(m => m.Address)</p>
+    <p>Путь к файлу дороги: @Html.DisplayFor(m => m.PathFile)</p>
+    <p>Координаты широты 1: @Html.DisplayFor(m => m.CoorLatitude1)</p>
+    <p>Координаты долготы 1: @Html.DisplayFor(m => m.CoorLongitude1)</p>
+    <p>Координаты широты 2: @Html.DisplayFor(m => m.CoorLatitude1)</p>
+    <p>Координаты долготы 2: @Html.DisplayFor(m => m.CoorLongitude2)</p>
+    <p>Идентификатор трафика дороги: @Html.DisplayFor(m => m.trafficid)</p>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <input type="submit" value="Удалить" />
+    }
+
+    @Html.ActionLink("Назад", "Index", "Road")
+</div>

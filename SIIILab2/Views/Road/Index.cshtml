@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Road>
+
+<h2>Список дорог</h2>
+<table border="1">
+    <tr>
+        <th>Идентификатор дороги</th>
+        <th>Адрес дороги</th>
+        <th>Путь к файлу дороги</th>
+        <th>Координаты широты 1</th>
+        <th>Координаты долготы 1</th>
+        <th>Координаты широты 2</th>
+        <th>Координаты долготы 2</th>
+        <th>Идентификатор трафика дороги:</th>
+        <th>Действия:</th>
+    </tr>
+    @foreach (var c in Model)
+    {
+        <tr>
+            <td>@c.Id</td>
+            <td>@c.Address</td>
+            <td>@c.PathFile</td>
+            <td>@c.CoorLatitude1</td>
+            <td>@c.CoorLongitude1</td>
+            <td>@c.CoorLatitude2</td>
+            <td>@c.CoorLongitude2</td>
+            <td>@c.trafficid</td>
+            <td>
+                @Html.ActionLink("Смотреть", "GetRoad", "Road", new { id = c.Id })<br>
+                @Html.ActionLink("Изменить", "UpdateRoad", "Road", new { id = c.Id })<br>
+                @Html.ActionLink("Удалить", "DeleteRoad", "Road", new { id = c.Id })
+            </td>
+        </tr>
+    }
+</table>
+<p> @Html.ActionLink("Добавить", "CreateRoad", "Road")</p>

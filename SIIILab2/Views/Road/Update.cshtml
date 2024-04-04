@@ -1,0 +1,44 @@
+﻿@model Road
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div>
+            Адрес дороги
+            <p>@Html.EditorFor(model => model.Address)</p>
+        </div>
+
+        <div>
+            Путь к файлу дороги
+            <p>@Html.EditorFor(model => model.PathFile)</p>
+        </div>
+
+        <div>
+            Координаты широты 1
+            <p>@Html.EditorFor(model => model.CoorLatitude1)</p>
+        </div>
+
+        <div>
+            Координаты долготы 1
+            <p>@Html.EditorFor(model => model.CoorLongitude1)</p>
+        </div>
+
+        <div>
+            Координаты широты 2
+            <p>@Html.EditorFor(model => model.CoorLatitude2)</p>
+        </div>
+
+        <div>
+            Координаты долготы 2
+            <p>@Html.EditorFor(model => model.CoorLongitude2)</p>
+        </div>
+
+        <div>
+            Идентификатор трафика дороги
+            <p>@Html.EditorFor(model => model.trafficid)</p>
+        </div>
+
+        <p><input type="submit" value="Сохранить" /></p>
+        @Html.ActionLink("Назад", "Index", "Road")
+    }
+</div>

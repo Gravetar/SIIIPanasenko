@@ -1,0 +1,34 @@
+﻿@model RequestRoad
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div>
+            Закзчик
+            <p>@Html.EditorFor(model => model.Costumer)</p>
+        </div>
+
+        <div>
+            Дата запроса
+            <p>@Html.EditorFor(model => model.Reques_date)</p>
+        </div>
+
+        <div>
+            Статус запроса
+            <p>@Html.EditorFor(model => model.Status)</p>
+        </div>
+
+        <div>
+            Результат запроса
+            <p>@Html.EditorFor(model => model.Result)</p>
+        </div>
+
+        <div>
+            Идентификатор дороги
+            <p>@Html.EditorFor(model => model.roadid)</p>
+        </div>
+
+        <p><input type="submit" value="Сохранить" /></p>
+        @Html.ActionLink("Назад", "Index", "RequestRoad")
+    }
+</div>

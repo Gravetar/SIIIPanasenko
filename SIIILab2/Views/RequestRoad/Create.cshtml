@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model RequestRoad
+
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div>
+            Закзчик
+            <p>@Html.EditorFor(model => model.Costumer)</p>
+        </div>
+
+        <div>
+            Статус запроса
+            <p>@Html.EditorFor(model => model.Status)</p>
+        </div>
+
+        <div>
+            Результат запроса
+            <p>@Html.EditorFor(model => model.Result)</p>
+        </div>
+
+        <div>
+            Идентификатор дороги
+            <p>@Html.EditorFor(model => model.roadid)</p>
+        </div>
+
+        <p><input type="submit" value="Добавить" /></p>
+        @Html.ActionLink("Назад", "Index", "RequestRoad")
+    }
+</div>
